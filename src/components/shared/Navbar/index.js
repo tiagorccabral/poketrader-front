@@ -5,7 +5,7 @@ import { Container, BrandName } from './styles';
 function Navbar() {
   return (
     <Container>
-      <BrandName>PokeTrader</BrandName>
+      <BrandName to="/">PokeTrader</BrandName>
     </Container>
   );
 }
