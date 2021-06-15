@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios'
 
+import { apiEndPoint } from '../../utils/globals'
+
 import {
   Container, TraderContainer, TraderForm, MiddleSeparator, PokemonInput, PokemonInputContainer,
   SubmitButton, PokemonList, PokemonCard, PokemonCardTitle, PokemonCardImage,
@@ -45,7 +47,7 @@ function TradeBox() {
           trader1: { pokemon_ids: trainer1 },
           trader2: { pokemon_ids: trainer2 }
         }
-        const response = await axios.post(`http://localhost:3000/v1/trade/`, formData)
+        const response = await axios.post(`${apiEndPoint}/trade/`, formData)
         setSuccessMessage(response.data.message)
       } catch (error) {
         if (error.response) {

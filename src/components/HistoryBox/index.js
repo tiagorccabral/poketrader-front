@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+import { apiEndPoint } from '../../utils/globals'
+
 import {
   Container, TradeItemListContainer, TradeItemMetadataContainer, TradeItemMetadataText, TradeItemBox
 } from './styles';
@@ -9,7 +11,7 @@ function HistoryBox() {
 
   async function fetchTradeHistory() {
     try {
-      const data = await axios.get('http://localhost:3000/v1/trade_history')
+      const data = await axios.get(`${apiEndPoint}/trade_history`)
       setTrades(data.data)
     } catch (error) {
       console.log(error)
