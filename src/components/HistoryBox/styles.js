@@ -35,5 +35,5 @@ export const TradeItemMetadataContainer = styled.div`
 `;
 
 export const TradeItemMetadataText = styled.span`
-  font-size: 16px;
+  font-size: 12px;
 `;

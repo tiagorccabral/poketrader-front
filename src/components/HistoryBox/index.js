@@ -24,7 +24,7 @@ function HistoryBox() {
 
   const dateFormat = (date) => {
     date = new Date(date)
-    return date.toDateString()
+    return date.toUTCString()
   }
 
   return (
