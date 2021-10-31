@@ -13,8 +13,12 @@ function HistoryBox(props) {
   return (
     <TradeItemBox>
       <TradeItemMetadataContainer>
-        <TradeItemMetadataText>Resultado: {trade.result ? 'Troca justa' : 'Troca injusta'}</TradeItemMetadataText>
-        <TradeItemMetadataText>Dia: {dateFormat(trade.date)}</TradeItemMetadataText>
+        <TradeItemMetadataText><strong>Resultado: &nbsp;</strong>
+          {trade.result ? 'Troca justa' : 'Troca injusta'}
+        </TradeItemMetadataText>
+        <TradeItemMetadataText><strong>Dia: &nbsp;</strong>
+          {dateFormat(trade.date)}
+        </TradeItemMetadataText>
       </TradeItemMetadataContainer>
     </TradeItemBox>
   );

@@ -16,8 +16,11 @@ export const TradeItemMetadataContainer = styled.div`
   justify-content: center;
   align-items: center;
   border: 1px solid #ddd;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  padding: 1px;
 `;
 
 export const TradeItemMetadataText = styled.span`
   font-size: 12px;
+  padding: 5px;
 `;
