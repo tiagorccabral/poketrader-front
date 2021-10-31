@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 export const Container = styled.nav`
   width: 100%;
@@ -20,7 +20,7 @@ export const ItemsList = styled.ul`
   padding: 0;
   list-style-type: none;
   display: flex;
-  align-items:center;
+  align-items: center;
 `;
 
 export const Item = styled(Link)`
