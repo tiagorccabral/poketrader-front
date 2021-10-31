@@ -107,6 +107,19 @@ export const ClearButton = styled.div`
   border: 1px solid black;
 `;
 
+export const RemovePokemonButtton = styled.div`
+  width: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  border: 1px solid black;
+`;
+
 export const PokemonList = styled.div`
   height: auto;
   display: grid;
