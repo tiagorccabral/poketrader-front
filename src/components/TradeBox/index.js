@@ -6,7 +6,8 @@ import { apiEndPoint } from '../../utils/globals'
 import {
   Container, TraderContainer, TraderForm, MiddleSeparator, PokemonInput, PokemonInputContainer,
   SubmitButton, PokemonList, PokemonCard, PokemonCardTitle, PokemonCardImage,
-  ActionButtonsContainer, TradeButton, ClearButton, ActionMessageContainer, ActionMessageText
+  ActionButtonsContainer, TradeButton, ClearButton, ActionMessageContainer, ActionMessageText,
+  RemovePokemonButtton
 } from './styles';
 
 function useInput(defaultValue) {
@@ -54,6 +55,16 @@ function TradeBox() {
           setErrorMessage(error.response.data.message)
         }
       }
+    }
+  }
+
+  function removePokemonFromList(trainer, pokemonId) {
+    if (trainer === 'firstTrainer') {
+      const newPokemonsList = trader1Pokemons.filter(pokemon => pokemon.id !== pokemonId)
+      setTrader1Pokemons(newPokemonsList)
+    } else {
+      const newPokemonsList = trader2Pokemons.filter(pokemon => pokemon.id !== pokemonId)
+      setTrader2Pokemons(newPokemonsList)
     }
   }
 
@@ -114,6 +125,9 @@ function TradeBox() {
                 <PokemonCard key={pokemon.id}>
                   <PokemonCardImage src={pokemon.imageUrl} alt={pokemon.name} />
                   <PokemonCardTitle>{pokemon.name}</PokemonCardTitle>
+                  <RemovePokemonButtton onClick={() => removePokemonFromList('firstTrainer', pokemon.id)}>
+                    X
+                  </RemovePokemonButtton>
                 </PokemonCard>
               )
             })}
@@ -136,6 +150,9 @@ function TradeBox() {
                 <PokemonCard key={pokemon.id}>
                   <PokemonCardImage src={pokemon.imageUrl} alt={pokemon.name} />
                   <PokemonCardTitle>{pokemon.name}</PokemonCardTitle>
+                  <RemovePokemonButtton onClick={() => removePokemonFromList('secondTrainer', pokemon.id)}>
+                    X
+                  </RemovePokemonButtton>
                 </PokemonCard>
               )
             })}
