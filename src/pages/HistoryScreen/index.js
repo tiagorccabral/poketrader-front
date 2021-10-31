@@ -1,13 +1,13 @@
 import React from 'react';
 
-import HistoryBox from '../../components/HistoryBox'
+import HistoryList from '../../components/HistoryList'
 
 import { Container } from './styles';
 
 function HistoryScreen() {
   return (
     <Container>
-      <HistoryBox />
+      <HistoryList />
     </Container>
   );
 }
